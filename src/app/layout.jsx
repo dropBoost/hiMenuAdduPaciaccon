@@ -10,6 +10,9 @@ const nunito = Nunito({
 export const metadata = {
   title: "hi)Menu by DROPBOOST",
   description: `MENU - ${companyName}`,
+  icons: {
+    icon: "/favicddon.ico", // ✅ richiamo della favicon
+  },
 };
 
 export default function RootLayout({ children }) {
