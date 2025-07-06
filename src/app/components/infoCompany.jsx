@@ -28,6 +28,7 @@ export const socialLink = [
 
 export const navLink = [
     {name:'zingare',link:'/zingare',img:'/imageDefault.png',attivo:'true'},
+    {name:'menu', link:'/menu',img:'/imageDefault.png',attivo:'true'},
     {name:'personalizza',link:'/personalizza',img:'/imageDefault.png',attivo:'true'},
     {name:'hotdog', link:'/hotdog',img:'/imageDefault.png',attivo:'true'},
     {name:'sfizi', link:'/sfizi',img:'/imageDefault.png',attivo:'true'},

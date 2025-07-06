@@ -23,7 +23,7 @@ export default function GalleryMedia({ refreshTrigger }) {
   return (
     <div className="grid gap-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 auto-cols-auto w-full h-full ps-6 pe-6">
       {loading ? (
-        <p>Caricamento...</p>
+        <p className='text-neutral-100'>Caricamento...</p>
       ) : media.length > 0 ? (
         media.map((item) => (
           <CardMenuItems
@@ -39,7 +39,7 @@ export default function GalleryMedia({ refreshTrigger }) {
           />
         ))
       ) : (
-        <p>Nessun media disponibile</p>
+        <p className='text-neutral-100'>Nessun media disponibile  :( </p>
       )}
     </div>
   );

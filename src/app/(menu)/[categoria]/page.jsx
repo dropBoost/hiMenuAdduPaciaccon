@@ -10,6 +10,8 @@ export default async function CategoryPage({ params }) {
   if (!menu || menu.length === 0) return <div className='flex justify-center items-center h-full text-brand-400 uppercase font-extrabold text-sm'>Nessun elemento trovato per {categoria}</div>;
 
   return (
+    <>
     <FoodGrid categoria={categoria} menu={menu} />
+    </>
   );
 }

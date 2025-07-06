@@ -4,7 +4,6 @@ import { supabaseServer } from '@/lib/supabaseServerClient';
 import { v4 as uuidv4 } from 'uuid';
 
 export const postMediaAction = async (formData) => {
-
   const attivo = formData.get('attivo') === 'on';
   const categoria = formData.get('categoria');
   const nome = formData.get('nome');
@@ -13,18 +12,22 @@ export const postMediaAction = async (formData) => {
   const posizione = formData.get('posizione');
   const abitudiniAlimentari = formData.get('abitudiniAlimentari');
   const senzaGlutine = formData.get('senzaGlutine') === 'on';
+  const special = formData.get('special') === 'on';
   const file = formData.get('file');
-
   const dataUpload = new Date();
 
   let fileUrl = '';
 
-  if (file && typeof file === 'object' && file.name) {
-    const fileExt = file.name.split('.').pop();
+  if (
+    file &&
+    typeof file === 'object' &&
+    file.name &&
+    file.size > 0
+  ) {
+    const parts = file.name.split('.');
+    const fileExt = parts.length > 1 ? parts.pop() : null;
 
-    if (!fileExt) {
-      fileUrl = '';
-    } else {
+    if (fileExt) {
       const uniqueName = `${uuidv4()}.${fileExt}`;
 
       const { error: uploadError } = await supabaseServer.storage
@@ -36,12 +39,7 @@ export const postMediaAction = async (formData) => {
         });
 
       if (uploadError) {
-        console.error('❌ Errore durante l\'upload del file:', {
-          message: uploadError.message,
-          details: uploadError.details,
-          name: uploadError.name,
-          hint: uploadError.hint,
-        });
+        console.error('❌ Errore durante l\'upload del file:', uploadError);
         throw new Error(`Errore upload file: ${uploadError.message}`);
       }
 
@@ -51,9 +49,6 @@ export const postMediaAction = async (formData) => {
 
       fileUrl = publicUrlData.publicUrl;
     }
-  } else {
-    // file non valido o non presente
-    fileUrl = '';
   }
 
   const { data, error } = await supabaseServer
@@ -68,6 +63,7 @@ export const postMediaAction = async (formData) => {
         posizione,
         abitudiniAlimentari,
         senzaGlutine,
+        special,
         imgUrl: fileUrl,
         dataUpload,
       },

@@ -7,7 +7,7 @@ export default function CaricamentoMenu() {
 
   return (
     <div className="overflow-auto ps-3 pe-3 w-[100%] h-[100%]">
-      <form action={postMediaAction} className="rounded-lg shadow-lg w-[100%] h-full" method="post">
+      <form action={postMediaAction} className="rounded-lg w-[100%] h-full" method="post">
 
         {/* Attivo */}
         <div className="mb-4 flex items-center gap-2">
@@ -57,7 +57,6 @@ export default function CaricamentoMenu() {
             id="ingredienti"
             name="ingredienti"
             className="w-full p-3 bg-neutral-900 text-white text-sm rounded-md focus:outline-none focus:ring-1 focus:ring-appColor-500"
-            required
           />
         </div>        
 
@@ -112,6 +111,19 @@ export default function CaricamentoMenu() {
               name="senzaGlutine"
             />
             <label htmlFor="senzaGlutine" className="text-white text-xs ms-2">(attiva in senza glutine)</label>
+          </div>
+        </div>
+
+        {/* Special */}        
+        <div className="flex flex-col justify-start items-start mb-4">
+          <label htmlFor="special" className="block text-white text-300 mb-2">Special</label>
+          <div className="flex">
+            <input
+              type="checkbox"
+              id="special"
+              name="special"
+            />
+            <label htmlFor="special" className="text-white text-xs ms-2">(attiva etichetta SPECIAL)</label>
           </div>
         </div>
 

@@ -9,7 +9,7 @@ import { faXmark, faBars } from '@fortawesome/free-solid-svg-icons'
 import { usePathname } from "next/navigation";
 
 const ICONclose = <FontAwesomeIcon icon={faXmark}/>
-const ICONmenu = <FontAwesomeIcon icon={faBars} className="text-xl"/>
+const ICONmenu = <FontAwesomeIcon icon={faBars} className="text-xl text-brand-400"/>
 
 export default function ContactBarMenu () {
 

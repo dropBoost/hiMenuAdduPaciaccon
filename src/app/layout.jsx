@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className={`${nunito.variable} font-nunito h-screen`}>
+      <body className={`${nunito.variable} font-nunito h-screen bg-neutral-950`}>
         {children}
       </body>
     </html>
