@@ -1,6 +1,6 @@
 import { Nunito } from "next/font/google";
 import "./globals.css";
-import { companyName,colorLight,colorDark } from "./components/infoCompany";
+import { companyName,colorLight,colorDark, logoLight } from "./components/infoCompany";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -8,17 +8,22 @@ const nunito = Nunito({
 });
 
 export const metadata = {
-  title: "hi)Menu by DROPBOOST",
+  title: `${companyName} • HiMenu`,
   description: `MENU - ${companyName}`,
-  icons: {
-    icon: "/favicddon.ico", // ✅ richiamo della favicon
-  },
+  // icons: {
+  //   icon: {logoLight}, // ✅ richiamo della favicon
+  // },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="it">
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content={colorLight}/>
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content={colorLight}/>
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="icon" href={logoLight} type="image/png"></link>
         <style
           dangerouslySetInnerHTML={{
             __html: `

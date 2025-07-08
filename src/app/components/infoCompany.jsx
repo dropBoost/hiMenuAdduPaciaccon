@@ -20,7 +20,7 @@ export const colorDark = "#282828"
 export const socialLink = [
     {name:'whatsApp',link:'https://www.whatsapp.com',icon: ICONwhatsApp, info:"+39 366 35 85 395"},
     {name:'facebook',link:'fasc',icon: ICONfacebook, info:"@facebbok"},
-    {name:'instagram',link:'ggf',icon: ICONinstagram, info:"@instagram"},
+    {name:'instagram',link:'#',icon: ICONinstagram, info:"@instagram"},
     {name:'tiktok',link:'#',icon: ICONtikTok, info:"@tiktok"},
     {name:'email',link:'#',icon: ICONemail, info:"info@email.it"},
     {name:'tel',link:'dsda',icon: ICONtel, info:"+39 366 35 85 395"},

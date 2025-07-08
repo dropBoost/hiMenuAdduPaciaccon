@@ -19,13 +19,13 @@ export default function ContactBarMenu () {
 
     return (
         <>
-        <div className="w-full bg-brandDark-400 flex justify-between items-center p-5">
-            <div className="h-full order-2 md:order-1 flex justify-center items-center">
+        <div className="w-full bg-brandDark-400 flex items-center p-5">
+            <div className="h-full w-[33vw] order-2 md:order-1 md:w-[10vw] flex justify-center md:justify-start items-center">
                 <Link href="/" className="text-xl font-bold text-brand-500">
                     <Image src={logoLight} width={50} height={50} alt={`logo-${companyName}`}/>
                 </Link>
             </div>
-            <div className="h-full order-1 md:w-full md:order-2 flex md:justify-start justify-start items-center">
+            <div className="h-full w-[34vw] order-1 md:order-2 md:flex-1 flex justify-start items-center md:w-full md:justify-start ">
                 <div className="flex items-center justify-center">
                     <div className="hidden md:flex justify-center items-center gap-2 px-5">
                         {navLink.map((link, index) => (
@@ -88,7 +88,7 @@ export default function ContactBarMenu () {
                     </div>
                 )}
             </div>
-            <div className="h-full order-3 md:order-3 flex justify-between gap-2 items-center">
+            <div className="h-full w-[33vw] xl:w-full order-3 md:order-3 flex justify-end items-center  gap-2 ">
                 {socialLink.filter(icone => (icone.link !== '#')).map((icone,index) => (
                 <Link key={index} href={icone.link}>
                 <button alt={`${companyName} - ${icone.name}`} className="text-neutral-100 hover:text-brandDark-400 hover:bg-brand-400 hover:p-3 hover:rounded-md h-4 w-4 flex items-center justify-center" key={icone.name}>

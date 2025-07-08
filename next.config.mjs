@@ -1,7 +1,9 @@
+import nextPwa from 'next-pwa';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-   images: {
-    // domains: ['axvctqpgabterzldygfj.supabase.co'],
+  reactStrictMode: true,
+  images: {
     remotePatterns: [
       {
         protocol: 'https',
@@ -10,6 +12,14 @@ const nextConfig = {
       },
     ],
   },
+  // se vuoi usare altri parametri, li metti qui
 };
 
-export default nextConfig;
+const withPWA = nextPwa({
+  dest: 'public',
+  register: true,
+  skipWaiting: true,
+});
+
+// 👇 Applichiamo PWA a tutta la config
+export default withPWA(nextConfig);
